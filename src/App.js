@@ -1,11 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 import SwitchNavigator from './navigation/SwitchNavigation/SwitchNavigator';
+
 
 const App = () => {
 
   return (
-    <SwitchNavigator />
+    <Provider store={store}>
+      <SwitchNavigator />
+    </Provider>
   );
 };
 
