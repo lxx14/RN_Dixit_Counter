@@ -3,12 +3,18 @@ import { Text, View } from 'react-native';
 
 import { styles } from './styles';
 
-export default class MainScreen extends Component {
+export default class StatisticScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Main</Text>
+                <Text>Statistic</Text>
             </View>
         );
+    }
+}
+
+StatisticScreen.navigationOptions = () => {
+    return {
+        title: 'Statistic',
     }
 }

@@ -3,12 +3,18 @@ import { Text, View } from 'react-native';
 
 import { styles } from './styles';
 
-export default class SettingsScreen extends Component {
+export default class MainScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Settings</Text>
+                <Text>Main</Text>
             </View>
         );
+    }
+}
+
+MainScreen.navigationOptions = () => {
+    return {
+        title: 'Game on!',
     }
 }
