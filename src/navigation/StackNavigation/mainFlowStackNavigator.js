@@ -8,18 +8,19 @@ import { commonNavigationOptions } from './navigationOptions';
 
 const mainFlowCtackNavigator = createStackNavigator(
     {
-        Main: {
-            screen: MainScreen,
-            navigationOptions: () => ({
-                ...commonNavigationOptions,
-            })
-        },
         Settings: {
             screen: SettingsScreen,
             navigationOptions: () => ({
                 ...commonNavigationOptions,
             })
         },
+        Main: {
+            screen: MainScreen,
+            navigationOptions: () => ({
+                ...commonNavigationOptions,
+            })
+        },
+
         Statistic: {
             screen: StatisticScreen,
             navigationOptions: () => ({
