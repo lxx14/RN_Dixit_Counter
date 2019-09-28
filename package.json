@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",

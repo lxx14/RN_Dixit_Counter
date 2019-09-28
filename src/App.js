@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Screen from './Screen/Screen';
+import Screen from './components/screens/Settings/Settings';
 
 const App = () => {
 
