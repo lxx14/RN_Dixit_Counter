@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Screen from './components/screens/Settings/Settings';
+import SwitchNavigator from './components/navigation/SwitchNavigation/SwitchNavigator';
 
 const App = () => {
 
   return (
-    <Screen />
+    <SwitchNavigator />
   );
 };
 
