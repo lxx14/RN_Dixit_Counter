@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, FlatList, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import ModalComponent from '../../components/modal/modal';
 
 import { styles } from './styles';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 class SettingsScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            players: [],
-        }
+
     }
-    componentDidMount() {
-        const { players } = this.props;
-        this.setState({ players: players })
+    onStartGame = () => {
+        const { navigation, players } = this.props
+        navigation.navigate("Main", { players: players })
     }
 
     render() {
-        const { players } = this.state;
-        console.log(players);
-
+        const { players } = this.props;
         return (
             <View style={styles.container}>
-                <Text>Test</Text>
-                <Text>Test</Text>
+                <ScrollView>
+                    {players && <FlatList
+                        data={players}
+                        renderItem={({ item }) => <Text key={item.id}>{item.name}</Text>}
+                        keyExtractor={item => item.id.toString()}
+                    />}
+                    {players.length < 3 ?
+                        <Text>Add at least 3 players</Text> :
+                        <TouchableWithoutFeedback onPress={this.onStartGame}>
+                            <Text>Start Game</Text>
+                        </TouchableWithoutFeedback>}
+                </ScrollView>
                 <ModalComponent />
             </View>
         );
@@ -39,7 +46,7 @@ SettingsScreen.navigationOptions = () => {
 }
 
 const mapStateToProps = (state) => ({
-    players: state.players
+    players: state.players.players
 });
 
 export default connect(mapStateToProps)(SettingsScreen)
