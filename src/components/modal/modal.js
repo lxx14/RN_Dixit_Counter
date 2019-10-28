@@ -54,7 +54,7 @@ class ModalComponent extends Component {
         </Modal>
 
         <TouchableWithoutFeedback onPress={this.toggleModal}>
-          <FontAwesomeIcon icon={faPlusCircle} size={50} color='#4287f5' style={styles.icon}/>
+          <FontAwesomeIcon icon={faPlusCircle} size={50} color='#4287f5' style={styles.icon} />
         </TouchableWithoutFeedback>
       </View>
     );

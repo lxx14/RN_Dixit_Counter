@@ -14,7 +14,6 @@ export default class AppleStyleSwipeableRow extends Component {
         });
         const pressHandler = () => {
             const { addScore } = this.props;
-            console.log(text);
             addScore(text);
             this.close();
         };

@@ -24,13 +24,13 @@ class SettingsScreen extends Component {
                 <ScrollView>
                     {players && <FlatList
                         data={players}
-                        renderItem={({ item }) => <Text key={item.id}>{item.name}</Text>}
+                        renderItem={({ item }) => <Text key={item.id} style={styles.text}>{item.name}</Text>}
                         keyExtractor={item => item.id.toString()}
                     />}
                     {players.length < 3 ?
-                        <Text>Add at least 3 players</Text> :
+                        <Text style={styles.hint}>Add at least 3 players</Text> :
                         <TouchableWithoutFeedback onPress={this.onStartGame}>
-                            <Text>Start Game</Text>
+                            <Text style={styles.button}>Start Game</Text>
                         </TouchableWithoutFeedback>}
                 </ScrollView>
                 <ModalComponent />

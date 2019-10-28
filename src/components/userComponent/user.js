@@ -18,7 +18,7 @@ class User extends Component {
     static getDerivedStateFromProps = (props, state) => {
         if (props.endRound !== state.endRound) {
             state.totalScore += state.score;
-            state.score =0;
+            state.score = 0;
         }
         return state
     }
@@ -42,7 +42,7 @@ class User extends Component {
                         <Text>{name}</Text>
                         <Text>Round score: {score} Total score: {totalScore}</Text>
                         {score > 0 && <TouchableWithoutFeedback onPress={this.cancelScore}>
-                            <Text>Cancel</Text>
+                            <Text style={{ color: 'red' }}>ОТМЕНИТЬ ОЧКИ</Text>
                         </TouchableWithoutFeedback>}
                     </View>
                 </AppleStyleSwipeableRow>

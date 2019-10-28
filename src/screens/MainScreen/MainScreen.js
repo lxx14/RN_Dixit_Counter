@@ -37,9 +37,9 @@ class MainScreen extends Component {
                     renderItem={({ item }) => <User key={item.id} data={item} />}
                     keyExtractor={item => item.id.toString()}
                 />}
-                <Text>Round: {round}</Text>
+                <Text style={styles.round}>Round: {round}</Text>
                 <TouchableWithoutFeedback onPress={this.endRound}>
-                    <Text>End round</Text>
+                    <Text style={styles.button}>End round</Text>
                 </TouchableWithoutFeedback>
             </ScrollView>
         );

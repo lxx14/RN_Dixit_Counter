@@ -5,9 +5,8 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-    switch(action.type) {
+    switch (action.type) {
         case SET_NEW_PLAYER: {
-            console.log(action.data);
             return {
                 ...state,
                 players: [...state.players, action.data]

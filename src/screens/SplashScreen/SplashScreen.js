@@ -5,8 +5,8 @@ import { styles } from './styles';
 
 export default class SplashScreen extends Component {
 
-    componentDidMount ()  {
-        
+    componentDidMount() {
+
         setTimeout(
             this.goMainPage, 2000
         )
