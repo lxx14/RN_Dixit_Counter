@@ -20,7 +20,6 @@ class MainScreen extends Component {
         const { navigation } = this.props;
         const players = navigation.getParam("players");
         this.setState({ players });
-        console.log('players main screen----->', players)
     }
 
     endRound = () => {
@@ -30,7 +29,8 @@ class MainScreen extends Component {
     }
 
     endGame = () => {
-        console.log('end game!')
+        const { navigation } = this.props;
+        navigation.navigate("Statistic");
     }
 
     render() {

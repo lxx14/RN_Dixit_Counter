@@ -21,7 +21,6 @@ class User extends Component {
         if (props.endRound !== state.endRound) {
             state.totalScore += state.score;
             state.score = 0;
-            console.log('props add score--------------->', props.data);
             const id = props.data.id;
             const updateData = {
                 id,
