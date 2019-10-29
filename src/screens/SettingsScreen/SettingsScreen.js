@@ -21,7 +21,7 @@ class SettingsScreen extends Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    {players && <FlatList
+                    {players.length > 0 && <FlatList
                         data={players}
                         renderItem={({ item }) => <Text key={item.id} style={styles.text}>{item.name}</Text>}
                         keyExtractor={item => item.id.toString()}

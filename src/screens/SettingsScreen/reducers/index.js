@@ -19,7 +19,7 @@ export default function (state = initialState, action) {
                 players: state.players.map(item => {
                     if (action.data.id === item.id) {
                         item.totalScore = action.data.totalScore
-                    } 
+                    }
                     return item
                 })
             }
