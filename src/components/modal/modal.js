@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View, TextInput } from 'react-native';
+import { Text, TouchableOpacity, View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
@@ -42,20 +42,20 @@ class ModalComponent extends Component {
           isVisible={this.state.isModalVisible}
           animationInTiming={600}
           animationOutTiming={600}
-          backdropOpacity={0.16}
+          backdropOpacity={0.3}
         >
           <View style={styles.container}>
             <TextInput style={styles.input} onChangeText={this.handleInput} />
-            <TouchableWithoutFeedback onPress={this.addPlayer}>
+            <TouchableOpacity onPress={this.addPlayer}>
               <Text style={styles.button}>Add player</Text>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
 
           </View>
         </Modal>
 
-        <TouchableWithoutFeedback onPress={this.toggleModal}>
+        <TouchableOpacity onPress={this.toggleModal}>
           <FontAwesomeIcon icon={faPlusCircle} size={50} color='#4287f5' style={styles.icon} />
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       </View>
     );
   }

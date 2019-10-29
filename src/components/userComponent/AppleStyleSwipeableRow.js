@@ -28,7 +28,7 @@ export default class AppleStyleSwipeableRow extends Component {
         );
     };
     renderRightActions = progress => (
-        <View style={{ width: '100%', height: 60, flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row' }}>
+        <View style={{ width: '100%', height: 100, flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row' }}>
             {this.renderRightAction(1, '#C8C7CD', 384, progress)}
             {this.renderRightAction(2, '#ffab00', 329, progress)}
             {this.renderRightAction(3, '#dd2c00', 274, progress)}

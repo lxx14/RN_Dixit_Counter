@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View, TextInput } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { connect } from 'react-redux';
 import { setEndRoundAction } from '../../screens/MainScreen/actions';
@@ -38,12 +38,13 @@ class User extends Component {
         return (
             <View style={styles.container}>
                 <AppleStyleSwipeableRow addScore={this.addScore}>
-                    <View style={{ height: 60 }}>
-                        <Text>{name}</Text>
-                        <Text>Round score: {score} Total score: {totalScore}</Text>
-                        {score > 0 && <TouchableWithoutFeedback onPress={this.cancelScore}>
-                            <Text style={{ color: 'red' }}>ОТМЕНИТЬ ОЧКИ</Text>
-                        </TouchableWithoutFeedback>}
+                    <View style={styles.textContainer}>
+                        <Text style={styles.text}>{name}</Text>
+                        <Text style={styles.roundScoreContainer}>Очки за раунд:   <Text style={styles.roundScore}>{score}</Text></Text>
+                        <Text style={styles.totalScoreContainer}>Очки за игру:    <Text style={styles.totalScore}>{totalScore}</Text></Text>
+                        {score > 0 && <TouchableOpacity onPress={this.cancelScore}>
+                            <Text style={styles.denyScore}>ОТМЕНИТЬ ОЧКИ</Text>
+                        </TouchableOpacity>}
                     </View>
                 </AppleStyleSwipeableRow>
             </View>

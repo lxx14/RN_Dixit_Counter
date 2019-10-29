@@ -14,6 +14,7 @@ export const styles = StyleSheet.create(
             paddingBottom: 20,
             backgroundColor: '#03a1fc',
             textAlign: 'center',
+            borderRadius: 7
         },
         hint: {
             marginTop: 30,
@@ -22,6 +23,7 @@ export const styles = StyleSheet.create(
         text: {
             marginTop: 10,
             textAlign: 'center',
+            fontSize: 25
         }
     }
 )

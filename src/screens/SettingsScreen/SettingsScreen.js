@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList, ScrollView } from 'react-native';
+import { Text, View, FlatList, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-
+import { Header } from '../../components/header'
 import ModalComponent from '../../components/modal/modal';
 
 import { styles } from './styles';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 class SettingsScreen extends Component {
     constructor(props) {
@@ -28,10 +27,10 @@ class SettingsScreen extends Component {
                         keyExtractor={item => item.id.toString()}
                     />}
                     {players.length < 3 ?
-                        <Text style={styles.hint}>Add at least 3 players</Text> :
-                        <TouchableWithoutFeedback onPress={this.onStartGame}>
-                            <Text style={styles.button}>Start Game</Text>
-                        </TouchableWithoutFeedback>}
+                        <Text style={styles.hint}>Для игры нужно минимум 3 игрока</Text> :
+                        <TouchableOpacity onPress={this.onStartGame}>
+                            <Text style={styles.button}>Начать игру</Text>
+                        </TouchableOpacity>}
                 </ScrollView>
                 <ModalComponent />
             </View>
@@ -41,7 +40,10 @@ class SettingsScreen extends Component {
 
 SettingsScreen.navigationOptions = () => {
     return {
-        title: 'Settings',
+        headerTitle: () => <Header title={'Настройки игроков'} />,
+        headerStyle: {
+            backgroundColor: '#e3efff',
+        },
     }
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableWithoutFeedback, ScrollView, FlatList } from 'react-native';
+import { Text, View, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { setEndRoundAction } from './actions';
 import User from '../../components/userComponent/user';
-
+import { Header } from '../../components/header';
 import { styles } from './styles';
 
 class MainScreen extends Component {
@@ -32,15 +32,15 @@ class MainScreen extends Component {
         const { players, round } = this.state;
         return (
             <ScrollView style={styles.container}>
+                <Text style={styles.round}>Раунд: {round}</Text>
                 {players && <FlatList
                     data={players}
                     renderItem={({ item }) => <User key={item.id} data={item} />}
                     keyExtractor={item => item.id.toString()}
                 />}
-                <Text style={styles.round}>Round: {round}</Text>
-                <TouchableWithoutFeedback onPress={this.endRound}>
-                    <Text style={styles.button}>End round</Text>
-                </TouchableWithoutFeedback>
+                <TouchableOpacity onPress={this.endRound}>
+                    <Text style={styles.button}>Конец раунда</Text>
+                </TouchableOpacity>
             </ScrollView>
         );
     }
@@ -48,8 +48,9 @@ class MainScreen extends Component {
 
 MainScreen.navigationOptions = () => {
     return {
-        title: 'Game on!',
-        headerLeft: null
+        headerTitle: () => <Header title={'Играем!'} />,
+        headerLeft: null,
+        backgroundColor: '#e3efff',
     }
 }
 

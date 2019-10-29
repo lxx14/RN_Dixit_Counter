@@ -7,17 +7,21 @@ export const styles = StyleSheet.create(
         },
         button: {
             backgroundColor: '#03a1fc',
-            marginTop: 20,
+            marginTop: 40,
+            marginBottom: 40,
             textAlign: 'center',
             width: 150,
             paddingTop: 20,
             paddingBottom: 20,
             alignSelf: 'center',
+            fontWeight: 'bold',
+            borderRadius: 7,
         },
         round: {
             alignSelf: 'center',
-            marginTop: 20,
+            marginTop: 10,
+            marginBottom: 10,
             fontSize: 30,
-        }
+        },
     }
 )
