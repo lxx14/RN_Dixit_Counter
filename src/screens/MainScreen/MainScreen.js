@@ -20,12 +20,17 @@ class MainScreen extends Component {
         const { navigation } = this.props;
         const players = navigation.getParam("players");
         this.setState({ players });
+        console.log('players main screen----->', players)
     }
 
     endRound = () => {
         const { setEndRoundAction } = this.props;
         this.setState({ round: this.state.round + 1 })
         setEndRoundAction(true);
+    }
+
+    endGame = () => {
+        console.log('end game!')
     }
 
     render() {
@@ -41,6 +46,9 @@ class MainScreen extends Component {
                 <TouchableOpacity onPress={this.endRound}>
                     <Text style={styles.button}>Конец раунда</Text>
                 </TouchableOpacity>
+                {round > 1 && <TouchableOpacity onPress={this.endGame}>
+                    <Text style={styles.buttonEndGame}>Закончить игру</Text>
+                </TouchableOpacity>}
             </ScrollView>
         );
     }
@@ -50,7 +58,9 @@ MainScreen.navigationOptions = () => {
     return {
         headerTitle: () => <Header title={'Играем!'} />,
         headerLeft: null,
-        backgroundColor: '#e3efff',
+        headerStyle: {
+            backgroundColor: '#e3efff',
+        },
     }
 }
 

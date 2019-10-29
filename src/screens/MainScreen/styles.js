@@ -17,6 +17,17 @@ export const styles = StyleSheet.create(
             fontWeight: 'bold',
             borderRadius: 7,
         },
+        buttonEndGame: {
+            backgroundColor: '#ffb854',
+            marginBottom: 40,
+            textAlign: 'center',
+            width: 150,
+            paddingTop: 20,
+            paddingBottom: 20,
+            alignSelf: 'center',
+            fontWeight: 'bold',
+            borderRadius: 7,
+        },
         round: {
             alignSelf: 'center',
             marginTop: 10,

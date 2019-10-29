@@ -35,6 +35,17 @@ export const styles = StyleSheet.create(
         },
         totalScoreContainer: {
             paddingLeft: 10,
-        }
+        },
+        actionText: {
+            color: 'white',
+            fontSize: 16,
+            backgroundColor: 'transparent',
+            padding: 10,
+        },
+        rightAction: {
+            alignItems: 'center',
+            flex: 1,
+            justifyContent: 'center',
+        },
     }
 )

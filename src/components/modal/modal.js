@@ -24,7 +24,6 @@ class ModalComponent extends Component {
     const newPlayer = {
       id: players.length + 1,
       name: value,
-      score: 0,
       totalScore: 0
     };
     value.length > 1 && setNewPlayerAction(newPlayer);

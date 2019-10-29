@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { connect } from 'react-redux';
 import { setEndRoundAction } from '../../screens/MainScreen/actions';
+import { updateTotalScoreAction } from '../userComponent/actions'
 import AppleStyleSwipeableRow from './AppleStyleSwipeableRow';
 
 class User extends Component {
@@ -16,16 +17,26 @@ class User extends Component {
     }
 
     static getDerivedStateFromProps = (props, state) => {
+        const { updateTotalScoreAction } = props;
         if (props.endRound !== state.endRound) {
             state.totalScore += state.score;
             state.score = 0;
+            console.log('props add score--------------->', props.data);
+            const id = props.data.id;
+            const updateData = {
+                id,
+                totalScore: state.totalScore
+            };
+            updateTotalScoreAction(updateData);
         }
         return state
     }
 
     addScore = (value) => {
-        const { setEndRoundAction } = this.props;
-        setEndRoundAction(false);
+        const { setEndRoundAction, endRound } = this.props;
+        if (endRound === true) {
+            setEndRoundAction(false);
+        }
         this.setState({ score: this.state.score + value });
     }
     cancelScore = () => {
@@ -57,7 +68,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    setEndRoundAction
+    setEndRoundAction,
+    updateTotalScoreAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);
