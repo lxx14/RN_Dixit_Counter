@@ -36,7 +36,7 @@ class User extends Component {
         if (endRound === true) {
             setEndRoundAction(false);
         }
-        this.setState({ score: this.state.score + value });
+        this.setState({ score: value });
     }
     cancelScore = () => {
         this.setState({ score: 0 });
